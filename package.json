@@ -1,0 +1,14 @@
+{
+  "name": "todo-life-dashboard",
+  "version": "1.0.0",
+  "description": "Zero-dependency single-page personal productivity dashboard",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "fast-check": "3.23.2",
+    "jsdom": "25.0.1",
+    "vitest": "2.1.9"
+  }
+}

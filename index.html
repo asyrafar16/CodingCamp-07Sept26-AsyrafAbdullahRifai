@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Error Banner -->
+  <div id="error-banner" role="alert" aria-live="polite" hidden></div>
+
+  <main class="dashboard">
+
+    <!-- Greeting Widget -->
+    <section id="greeting" class="widget widget--greeting" aria-labelledby="greeting-heading">
+      <h2 id="greeting-heading" class="widget__title">Welcome</h2>
+      <p id="greeting-message" class="greeting__message"></p>
+      <time id="greeting-time" class="greeting__time" aria-label="Current time"></time>
+      <p id="greeting-date" class="greeting__date"></p>
+    </section>
+
+    <!-- Focus Timer -->
+    <section id="focus-timer" class="widget widget--timer" aria-labelledby="timer-heading">
+      <h2 id="timer-heading" class="widget__title">Focus Timer</h2>
+      <div id="timer-display" class="timer__display" role="timer" aria-live="off">25:00</div>
+      <div id="timer-end-indicator" class="timer__end-indicator" hidden aria-live="assertive">
+        Session complete!
+      </div>
+      <div class="timer__controls">
+        <button id="timer-start" class="btn btn--primary" type="button">Start</button>
+        <button id="timer-stop" class="btn btn--secondary" type="button">Stop</button>
+        <button id="timer-reset" class="btn btn--secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- Task Manager -->
+    <section id="task-manager" class="widget widget--tasks" aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading" class="widget__title">Tasks</h2>
+      <form id="task-form" class="task__form" novalidate>
+        <label for="task-input" class="sr-only">New task description</label>
+        <input
+          id="task-input"
+          class="input task__input"
+          type="text"
+          placeholder="Add a new task…"
+          maxlength="200"
+          autocomplete="off"
+          aria-describedby="task-input-error"
+        />
+        <button id="task-add" class="btn btn--primary" type="submit">Add</button>
+      </form>
+      <p id="task-input-error" class="error-msg" hidden></p>
+      <ul id="task-list" class="task__list" aria-label="Task list"></ul>
+    </section>
+
+    <!-- Quick Links Panel -->
+    <section id="quick-links" class="widget widget--links" aria-labelledby="links-heading">
+      <h2 id="links-heading" class="widget__title">Quick Links</h2>
+      <form id="link-form" class="link__form" novalidate>
+        <label for="link-label-input" class="sr-only">Link label</label>
+        <input
+          id="link-label-input"
+          class="input link__input link__input--label"
+          type="text"
+          placeholder="Label"
+          maxlength="100"
+          autocomplete="off"
+          aria-describedby="link-label-error"
+        />
+        <label for="link-url-input" class="sr-only">Link URL</label>
+        <input
+          id="link-url-input"
+          class="input link__input link__input--url"
+          type="url"
+          placeholder="https://example.com"
+          autocomplete="off"
+          aria-describedby="link-url-error"
+        />
+        <button id="link-add" class="btn btn--primary" type="submit">Add</button>
+      </form>
+      <p id="link-label-error" class="error-msg" hidden></p>
+      <p id="link-url-error" class="error-msg" hidden></p>
+      <div id="links-container" class="links__container" aria-label="Quick links"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
